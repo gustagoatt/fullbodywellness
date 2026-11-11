@@ -67,7 +67,8 @@ body>header,body>section,body>footer{position:relative;z-index:1}
 .tg button{appearance:none;border:0;background:none;color:#b9b9b9;cursor:pointer;min-height:48px;padding:0 22px;border-radius:4px;font-family:Syncopate,'Arial Black',sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;transition:background .3s,color .3s}
 .tg button:hover{color:#f4f4f2}
 .tg button.on{background:var(--y);color:#0a0a0a}
-.week{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(170px,100%),1fr));gap:12px}
+.week{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(170px,100%),1fr));gap:12px;padding:0 24px}
+@media (min-width:701px){.week{grid-template-columns:repeat(6,minmax(0,1fr));gap:0;padding:0 max(8px,calc((100% - 1240px)/2))}.week .day{margin:0 clamp(8px,1.1vw,14px)}}
 .day{background:#121212;border:1px solid #2a2a2a;border-radius:4px;padding:20px 18px;display:flex;flex-direction:column;gap:14px;min-height:190px;transition:opacity .35s,border-color .35s}
 .day.off{opacity:.38}
 .day.has{border-color:#4a3f10}
@@ -148,7 +149,8 @@ body>header,body>section,body>footer{position:relative;z-index:1}
 <div class="fact rv" style="--d:.2s"><strong>100% Rogue®</strong><span>Todo o equipamento do box é da marca usada nas grandes competições.</span></div>
 </section>
 
-<section id="horarios" class="wrap" style="padding-top:110px;padding-bottom:110px;display:flex;flex-direction:column;gap:40px">
+<section id="horarios" style="padding-top:110px;padding-bottom:110px;display:flex;flex-direction:column;gap:40px">
+<div class="wrap" style="width:100%">
 <div class="rv" style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:28px">
 <div style="display:flex;flex-direction:column;gap:14px">
 <div class="lab eyebrow">Horários</div>
@@ -159,8 +161,11 @@ body>header,body>section,body>footer{position:relative;z-index:1}
 <button type="button" data-m="hx" aria-pressed="false">HYROX</button>
 </div>
 </div>
+</div>
 <div id="week" class="week rv" aria-live="polite"></div>
+<div class="wrap" style="width:100%">
 <p class="rv" id="hint" style="color:#b9b9b9;font-size:15px;max-width:640px"></p>
+</div>
 </section>
 
 <section id="hyrox" style="border-top:1px solid #222;border-bottom:1px solid #222">
