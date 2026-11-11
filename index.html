@@ -316,7 +316,8 @@ html{scroll-behavior:smooth}
       facts: ['Condicionamento, técnica e disciplina', 'Horários: consulte no WhatsApp'] },
     { short: 'CrossFit · HYROX', name: 'CrossFit · HYROX', t: 'o CrossFit e o HYROX',
       desc: 'A FB CrossFit é HYROX Training Club: treino funcional de alta intensidade e preparação para quem quer encarar as provas.',
-      facts: ['HYROX Training Club', 'Siga a turma em @fb_crossfit', 'Horários: consulte no WhatsApp'] }
+      facts: ['Único afiliado CrossFit® e HYROX HTCX da cidade', '100% Rogue®', 'Aulas de segunda a sábado'],
+      link: 'crossfit/', linkText: 'Conhecer a FB CrossFit' }
   ];
 
   function el(tag, style, text, cls) {
@@ -338,8 +339,9 @@ html{scroll-behavior:smooth}
     });
     $('p-name').textContent = m.name;
     $('p-desc').textContent = m.desc;
-    $('p-cta').textContent = 'Quero saber mais sobre ' + m.t;
-    $('p-cta').href = WA + encodeURIComponent('Olá! Quero saber mais sobre ' + m.t + ' na Fullbody Wellness.');
+    $('p-cta').textContent = m.linkText || 'Quero saber mais sobre ' + m.t;
+    $('p-cta').href = m.link || WA + encodeURIComponent('Olá! Quero saber mais sobre ' + m.t + ' na Fullbody Wellness.');
+    if (m.link) $('p-cta').removeAttribute('target'); else $('p-cta').target = '_blank';
     var facts = $('p-facts');
     facts.textContent = '';
     m.facts.forEach(function (f) {
